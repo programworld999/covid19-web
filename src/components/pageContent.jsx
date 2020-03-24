@@ -35,7 +35,7 @@ class PageContent extends Component {
         <div className="main-content">
           <div className="section__content section__content--p30">
             <div className="container-fluid">
-              <h2 className="title-1">World-Wide overview</h2>
+              <h2 className="title-1">Covid19 World-Wide</h2>
               {loaded ? (
                 <div className="row m-t-25">
                   <CaseCard
