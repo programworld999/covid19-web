@@ -8,7 +8,7 @@ class CaseCard extends Component {
   };
   render() {
     return (
-      <div className="col-sm-6 col-lg-3">
+      <div className="col-sm-3 col-lg-3">
         <div className={`overview-item overview-item--c4 ${this.state.style}`}>
           <div className="overview__inner">
             <div className="overview-box clearfix">

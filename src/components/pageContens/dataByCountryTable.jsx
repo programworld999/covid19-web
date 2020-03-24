@@ -35,6 +35,7 @@ class DataByCountryTable extends Component {
             <tbody>
               {this.state.datas.map(data => (
                 <DataByCountryTableRow
+                  key={data.id}
                   country={data.countryFullName}
                   confirmed={data.confirmedCount}
                   active={data.currentConfirmedCount}

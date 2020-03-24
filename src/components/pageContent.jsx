@@ -39,12 +39,12 @@ class PageContent extends Component {
               {loaded ? (
                 <div className="row m-t-25">
                   <CaseCard
-                    name="Active Cases"
+                    name="Active"
                     count={this.state.active}
                     cardStyle="covid19-active"
                   />
                   <CaseCard
-                    name="Total Confirmed"
+                    name="Confirmed"
                     count={this.state.confirmed}
                     cardStyle="covid19-cofirmed"
                   />
