@@ -4,7 +4,7 @@ class CaseCard extends Component {
   state = {
     name: this.props.name,
     count: this.props.count,
-    style: this.props.style
+    style: this.props.cardStyle
   };
   render() {
     return (

@@ -4,6 +4,7 @@ import DataTableRow from "./pageContens/dataTableRow";
 import ChatsRow from "./pageContens/chatsRow";
 import CopyRightRow from "./pageContens/copyRightRow";
 import axios from "axios";
+import API from "../covid19API.json";
 
 class PageContent extends Component {
   state = {
@@ -14,7 +15,7 @@ class PageContent extends Component {
     recovered: ""
   };
   componentDidMount() {
-    let api = "http://127.0.0.1:8000/globaldata";
+    let api = API["host"] + "globaldata";
     axios.get(api).then(data => {
       let globalStatistics = data["data"]["globalStatistics"];
       this.setState({
@@ -24,7 +25,7 @@ class PageContent extends Component {
         recovered: globalStatistics["curedCount"]
       });
       this.setState({ loaded: true });
-      //   console.log("active: ", this.state.active);
+      // console.log(data);
     });
   }
   render() {
@@ -34,28 +35,28 @@ class PageContent extends Component {
         <div className="main-content">
           <div className="section__content section__content--p30">
             <div className="container-fluid">
-              <h2 class="title-1">World-Wide overview</h2>
+              <h2 className="title-1">World-Wide overview</h2>
               {loaded ? (
                 <div className="row m-t-25">
                   <CaseCard
                     name="Active Cases"
                     count={this.state.active}
-                    style="covid19-active"
+                    cardStyle="covid19-active"
                   />
                   <CaseCard
                     name="Total Confirmed"
                     count={this.state.confirmed}
-                    style="covid19-cofirmed"
+                    cardStyle="covid19-cofirmed"
                   />
                   <CaseCard
                     name="Deaths"
                     count={this.state.deaths}
-                    style="covid19-deaths"
+                    cardStyle="covid19-deaths"
                   />
                   <CaseCard
                     name="Recovered"
                     count={this.state.recovered}
-                    style="covid19-recovered"
+                    cardStyle="covid19-recovered"
                   />
                 </div>
               ) : (

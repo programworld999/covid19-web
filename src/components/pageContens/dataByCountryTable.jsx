@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import DataByCountryTableRow from "./dataByCountryTableRow";
-
+import API from "../../covid19API.json";
 class DataByCountryTable extends Component {
   state = {
     loaded: false,
     datas: []
   };
   componentDidMount() {
-    let api = "http://127.0.0.1:8000/bycountry";
+    let api = API["host"] + "bycountry";
     axios.get(api).then(res => {
       let data = JSON.parse(res.data);
       this.setState({ datas: data });
